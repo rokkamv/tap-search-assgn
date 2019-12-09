@@ -1,0 +1,8 @@
+{% extends "index.html" %}
+
+{% block search %}
+<div class='card'><div class='card-body'>{{indxt}}<br>{{indexdisp}}</div></div><div class='alert alert-success' role='alert'>Indexing done successfully!</div>
+<form method='POST' action='/search'><div class='form-group'><label for='exampleInputEmail1'>Enter the word to search for: </label><input type='text' class='form-control' id='word' name="word" name="txtstr" aria-describedby='emailHelp'></div><button type='submit' class='btn btn-primary'>Search</button></form>
+{% endblock %}
+
+<!-- {% block result %}{% endblock %} -->

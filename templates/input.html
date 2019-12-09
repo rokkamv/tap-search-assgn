@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+
+{% block inputt %}
+    <form method='POST' action='/handletxt'><div class='form-group'><label for='exampleInputEmail1'>{{txt}}</label><textarea type='text' class='form-control' cols=10 rows=10 name='txtstr' id='txtstr' aria-describedby='emailHelp'></textarea></div><button type='submit' class='btn btn-primary'>Submit</button></form>
+{% endblock %}
+
+<!-- {% block search %}{% endblock %} -->

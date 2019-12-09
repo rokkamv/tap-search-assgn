@@ -1,0 +1,7 @@
+{% extends "index.html" %}
+
+{% block inputp %}
+    <form action='/handlePDF' method='POST' enctype='multipart/form-data'>{{file}} <input type='file' name='pdf'/><br><input type='submit' value='Upload'/></form>
+{% endblock %}
+
+{% block search %}{% endblock %}
