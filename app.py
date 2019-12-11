@@ -2,7 +2,9 @@ from flask import Flask, render_template, redirect, request, session, url_for
 import PyPDF2 #For PDF parsing
 from nltk import word_tokenize #For tokenizing words
 import pickle #For saving the indexed dictionary and using the saved .pickle in another function
+import nltk
 
+nltk.download('punkt')
 app=Flask(__name__)
 
 @app.route('/',methods=['GET', 'POST'])
@@ -22,6 +24,7 @@ def handletxt(): #If directly text is entered then it is handled by this functio
         text=request.form['txtstr']
         doc_arr=[]
         lowtext=text.lower()
+        print(lowtext)
         doc_arr=lowtext.split('\r\n\r\n\r')
         docs,c={},1
         for doc in doc_arr:
