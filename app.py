@@ -76,4 +76,4 @@ def search(): #The word to be searched for is handled here and returns the locat
     return render_template('search.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run()
