@@ -24,8 +24,8 @@ def handletxt(): #If directly text is entered then it is handled by this functio
         text=request.form['txtstr']
         doc_arr=[]
         lowtext=text.lower()
-        print(lowtext)
-        doc_arr=lowtext.split('\r\n\r\n\r')
+        print(text)
+        doc_arr=lowtext.split('\r\n\r')
         docs,c={},1
         for doc in doc_arr:
             docs["Paragraph_"+str(c)]=word_tokenize(doc)
@@ -52,7 +52,7 @@ def handlePDF(): #If a .pdf file is uploaded then it is handled by this function
             pdfFileObj.close()
             doc_arr=[]
             lowtext=text.lower()
-            doc_arr=lowtext.split('\n\n')
+            doc_arr=lowtext.split('\r\n\r')
             docs,c={},1
             for doc in doc_arr:
                 docs["Paragraph_"+str(c)]=word_tokenize(doc)
@@ -79,4 +79,4 @@ def search(): #The word to be searched for is handled here and returns the locat
     return render_template('search.html')
 
 if __name__ == '__main__':
-    app.run(threaded=True,port=5000)
+    app.run(debug=True,threaded=True,port=5000)
