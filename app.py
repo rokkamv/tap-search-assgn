@@ -52,7 +52,7 @@ def handlePDF(): #If a .pdf file is uploaded then it is handled by this function
             pdfFileObj.close()
             doc_arr=[]
             lowtext=text.lower()
-            doc_arr=lowtext.split('\r\n\r')
+            doc_arr=lowtext.split('\n\n')
             docs,c={},1
             for doc in doc_arr:
                 docs["Paragraph_"+str(c)]=word_tokenize(doc)
